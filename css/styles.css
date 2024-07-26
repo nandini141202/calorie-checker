@@ -1,0 +1,362 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Red+Hat+Display:wght@400;700;900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+  
+  /*========== Colors ==========*/
+  --first-color: hsl(79, 72%, 55%);
+  --first-color-light: hsl(79, 97%, 77%);
+  --first-color-alt: hsl(79, 67%, 52%);
+  --first-color-dark: hsl(79, 63%, 50%);
+  --first-color-gray: hsl(79, 6%, 64%);
+  --title-color: hsl(180, 4%, 98%);
+  --title-color-black: hsl(180, 4%, 12%);
+  --text-color: hsl(180, 4%, 72%);
+  --text-color-light: hsl(180, 4%, 65%);
+  --body-color: hsl(180, 12%, 8%);
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Red Hat Display', sans-serif;
+  --second-font: 'Kaushan Script', cursive;
+  --biggest-font-size: 2rem;
+  --bigger-font-size: 1.5rem;
+  --big-font-size: 1.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-bold: 700;
+  --font-black: 900;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 6rem;
+    --bigger-font-size: 3.5rem;
+    --big-font-size: 2.75rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .75rem;
+  }
+}
+
+/*=============== BASE STYLES ===============*/
+body {
+  font-family: var(--body-font);
+  color: var(--text-color);
+  background-color: var(--body-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--title-color-black);
+  font-weight: var(--font-bold);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+button {
+  cursor: pointer;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background: var(--body-color);
+  position: relative; /* Ensure header is positioned relative for proper placement of the toggle button */
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo img {
+  height: 2.5rem;
+}
+
+.nav__toggle {
+  display: block;
+  position: absolute; /* Position the toggle button absolutely to move it to the right */
+  right: 1rem; /* Adjust the distance from the right */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Align perfectly in the center */
+  cursor: pointer;
+  font-size: 1.5rem; /* Adjust size as needed */
+}
+
+/* Hide the menu by default on mobile */
+.nav__menu {
+  display: none;
+}
+
+.nav__menu.active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align menu items to the right */
+  background-color: var(--title-color-black);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.nav__close {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--title-color);
+}
+
+.nav__close {
+  align-self: flex-end; /* Position close button at the top right */
+}
+
+/* Display the menu links */
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav__link {
+  color: var(--title-color);
+  font-size: var(--big-font-size);
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+/* Show the toggle button on mobile */
+@media screen and (max-width: 768px) {
+  .nav__list {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+
+  .nav__menu.active .nav__list {
+    display: flex;
+  }
+
+  .nav__close {
+    display: block;
+  }
+}
+
+/*=============== SECTION STYLES ===============*/
+.section {
+  padding: 2rem 0;
+}
+
+.section__title {
+  font-size: var(--biggest-font-size);
+  text-align: center;
+  color: var(--title-color-black);
+}
+
+.section__subtitle {
+  font-size: var(--bigger-font-size);
+  text-align: center;
+  color: var(--first-color);
+}
+
+.section__data {
+  text-align: center;
+}
+
+.section__titles {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section__title-border {
+  border-bottom: 2px solid var(--first-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/*=============== TDEE CALCULATOR ===============*/
+.tdee-calculator {
+  display: grid;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-bold);
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem;
+  border: 1px solid var(--text-color-light);
+  border-radius: 0.25rem;
+  font-size: var(--normal-font-size);
+}
+
+.tdee-calculator button {
+  padding: 0.75rem;
+  background: var(--first-color);
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+  cursor: pointer;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.tdee-calculator button:hover {
+  background: var(--first-color-dark);
+}
+
+.tdee-results {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.result {
+  text-align: center;
+  background: var(--first-color-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.result h3 {
+  margin-bottom: 0.5rem;
+  color: var(--title-color-black);
+}
+
+.result p {
+  font-size: var(--big-font-size);
+  font-weight: var(--font-black);
+  color: var(--title-color);
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+  padding: 1rem;
+  text-align: center;
+  background: var(--body-color);
+  color: var(--text-color);
+}
+
+/*=============== HOME SECTION ===============*/
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.section__data {
+  text-align: center;
+}
+
+.section__data img {
+  max-width: 80%; /* Resize home image */
+  height: auto;
+}
+
+.section__title {
+  font-size: var(--bigger-font-size);
+  margin-bottom: 1rem;
+  color: var(--first-color);
+}
+
+/*=============== PROGRAMS SECTION ===============*/
+#programs .section__data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.program__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.program {
+  text-align: center;
+  max-width: 220px; /* Slightly increase program box size */
+}
+
+.program img {
+  max-width: 100%;
+  height: auto;
+}
+
+.program__title {
+  margin-top: 1rem;
+  font-size: var(--h3-font-size);
+  color: var(--first-color-dark); /* Improved color visibility */
+}
+
+.program__description {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+/*=============== PRICING SECTION ===============*/
+.pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.pricing__plan {
+  text-align: center;
+  background: var(--first-color);
+  color: var(--title-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 220px; /* Increase width */
+}
+
+.pricing__plan h3 {
+  margin-bottom: 0.5rem;
+}
+
+.pricing__plan p {
+  font-size: var(--big-font-size);
+  font-weight: var(--font-black);
+  color: var(--title-color);
+}

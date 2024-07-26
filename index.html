@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+    <nav class="nav">
+        <div class="nav__logo">
+            <img src="images/logo-nav.png" alt="Logo">
+            <span>Universal Fitness Gym</span>
+        </div>
+        <div class="nav__toggle">
+            <span>☰</span>
+        </div>
+        <div class="nav__menu">
+            <div class="nav__close">
+                <span>&times;</span>
+            </div>
+            <ul class="nav__list">
+                <li><a href="#home" class="nav__link">Home</a></li>
+                <li><a href="#programs" class="nav__link">Programs</a></li>
+                <li><a href="#pricing" class="nav__link">Pricing</a></li>
+                <li><a href="#calculate" class="nav__link">Calculate</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="container">
+            <div class="section__data">
+                <h1 class="section__title">Welcome to Our Gym</h1>
+                <img src="images/home-img.png" alt="Home Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section">
+        <div class="container">
+            <div class="section__data">
+                <div class="section__titles">
+                    <h2 class="section__subtitle">Our Program</h2>
+                    <h2 class="section__title-border">BUILD YOUR</h2>
+                    <h2 class="section__title">BEST BODY</h2>
+                </div>
+                <div class="program__list">
+                    <div class="program">
+                        <img src="images/program1.png" alt="Flex Muscle">
+                        <h3 class="program__title">Flex Muscle</h3>
+                        <p class="program__description">Creating tension that's temporarily making the muscle fibers smaller or contracted.</p>
+                    </div>
+                    <div class="program">
+                        <img src="images/program2.png" alt="Cardio Exercise">
+                        <h3 class="program__title">Cardio Exercise</h3>
+                        <p class="program__description">Exercise your heart rate up and keeps it up for a prolonged period of time.</p>
+                    </div>
+                    <div class="program">
+                        <img src="images/program3.png" alt="Basic Yoga">
+                        <h3 class="program__title">Basic Yoga</h3>
+                        <p class="program__description">Diaphragmatic this is the most common breathing technique you'll find in yoga.</p>
+                    </div>
+                    <div class="program">
+                        <img src="images/program4.png" alt="Weight Lifting">
+                        <h3 class="program__title">Weight Lifting</h3>
+                        <p class="program__description">Attempts a maximum weight single lift of a barbell loaded with weight plates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+        <div class="container pricing">
+            <h2 class="section__subtitle">Membership Plans</h2>
+            <div class="pricing__plan">
+                <h3>Monthly</h3>
+                <p>₹3000</p>
+            </div>
+            <div class="pricing__plan">
+                <h3>Yearly</h3>
+                <p>₹30000</p>
+            </div>
+            <div class="pricing__plan">
+                <h3>Daily</h3>
+                <p>₹150</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TDEE Calculator Section -->
+    <section id="calculate" class="section">
+        <div class="container">
+            <h2 class="section__subtitle">TDEE Calculator</h2>
+            <form class="tdee-calculator">
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" id="weight" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="height">Height (cm)</label>
+                    <input type="number" id="height" required>
+                </div>
+                <div class="form-group">
+                    <label for="activity">Activity Level</label>
+                    <select id="activity" required>
+                        <option value="sedentary">Sedentary</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="active">Active</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="goal">Goal</label>
+                    <select id="goal" required>
+                        <option value="maintain">Maintain</option>
+                        <option value="gain">Gain</option>
+                        <option value="loss">Loss</option>
+                    </select>
+                </div>
+                <button type="submit">Calculate</button>
+            </form>
+            <div class="tdee-results">
+                <div class="result">
+                    <h3>Daily Caloric Intake</h3>
+                    <p id="tdeeResult">0</p>
+                </div>
+                <div class="result">
+                    <h3>Caloric Goal</h3>
+                    <p id="caloricGoalResult">0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Gym Website. All rights reserved.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
