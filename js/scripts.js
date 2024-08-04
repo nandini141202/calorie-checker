@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const weight = parseFloat(document.getElementById('weight').value);
         const height = parseFloat(document.getElementById('height').value);
         const activity = document.getElementById('activity').value;
+        const goal=document.getElementById('goal').value;
 
         let bmr;
 
@@ -55,6 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const calorieRecommendation = Math.round(tdee);
 
         document.getElementById('tdeeResult').textContent = Math.round(tdee) + ' kcal/day';
-        document.getElementById('calorieRecommendation').textContent = calorieRecommendation + ' kcal/day';
+        if(goal==='gain')
+            {document.getElementById('caloricGoalResult').textContent =  `${Math.floor(Math.round(tdee) + Math.random() * 240)} kcal/day`;}
+        else if(goal==='loss')
+        {
+            document.getElementById('caloricGoalResult').textContent =  `${Math.floor(Math.round(tdee) - Math.random() * 440)} kcal/day`;
+        }
+        else
+        {
+            document.getElementById('caloricGoalResult').textContent =  `${Math.floor(Math.round(tdee) - Math.random() * 0)} kcal/day`;
+        }
     });
 });
