@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {document.getElementById('caloricGoalResult').textContent =  `${Math.floor(Math.round(tdee) + Math.random() * 240)} kcal/day`;}
         else if(goal==='loss')
         {
-            document.getElementById('caloricGoalResult').textContent =  `${Math.floor(Math.round(tdee) - Math.random() * 440)} kcal/day`;
+            document.getElementById('caloricGoalResult').textContent =  `${Math.floor(Math.round(tdee) - Math.random() * 540)} kcal/day`;
         }
         else
         {
@@ -68,3 +68,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
