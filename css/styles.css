@@ -297,7 +297,11 @@ button {
   margin-bottom: 1rem;
   color: var(--first-color);
 }
-
+.section__title-border {
+  font-size: var(--bigger-font-size);
+  margin-bottom: 1rem;
+  color: var(--first-color);
+}
 /*=============== PROGRAMS SECTION ===============*/
 #programs .section__data {
   display: flex;
